@@ -6,6 +6,7 @@
   "scripts": {
     "release": "standard-version",
     "start": "node index.js",
+    "start:dev": "node dotenv/config index.js",
     "test": "nyc mocha",
     "test:report": "npm test && nyc report --reporter=text-lcov | coveralls",
     "test:watch": "mocha --watch --recursive"
@@ -31,6 +32,7 @@
   "homepage": "https://github.com/samucars/nba-data-collect#readme",
   "devDependencies": {
     "coveralls": "^3.0.5",
+    "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.0",
