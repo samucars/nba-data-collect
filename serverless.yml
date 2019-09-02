@@ -1,0 +1,18 @@
+service: nba-data-collect
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: sa-east-1
+  memorySize: 256
+
+functions:
+  collectGameData:
+    handler: jobs/collectGameData.handler
+    environment:
+      DB_HOST: mongodb://josnel:a234234@ds349587.mlab.com:49587/nba-stats
+    events:
+      - schedule:
+          rate: cron(*/1 * * * ? *)
+          enabled: true
+
