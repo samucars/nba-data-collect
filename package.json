@@ -2,9 +2,26 @@
   "name": "nba-data-collect",
   "version": "0.1.1",
   "description": "",
+  "keywords": [
+    "data",
+    "nba",
+    "node",
+    "scheduler"
+  ],
+  "homepage": "https://github.com/samucars/nba-data-collect#readme",
+  "bugs": {
+    "url": "https://github.com/samucars/nba-data-collect/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samucars/nba-data-collect.git"
+  },
+  "license": "ISC",
+  "author": "@samucars",
   "main": "index.js",
   "scripts": {
     "deploy": "serverless deploy -v",
+    "lint": "eslint .",
     "release": "standard-version",
     "start": "node index.js",
     "start:dev": "node -r dotenv/config index.js",
@@ -12,25 +29,14 @@
     "test:report": "npm test && nyc report --reporter=text-lcov | coveralls",
     "test:watch": "mocha --watch --recursive"
   },
-  "engines": {
-    "node": ">=10.16.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/samucars/nba-data-collect.git"
-  },
-  "keywords": [
-    "nba",
-    "node",
-    "data",
-    "scheduler"
+  "pre-commit": [
+    "lint",
+    "test"
   ],
-  "author": "@samucars",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/samucars/nba-data-collect/issues"
+  "dependencies": {
+    "basketball-reference-js": "^0.2.6",
+    "mongodb": "^3.2.7"
   },
-  "homepage": "https://github.com/samucars/nba-data-collect#readme",
   "devDependencies": {
     "coveralls": "^3.0.5",
     "eslint": "^6.0.1",
@@ -38,11 +44,11 @@
     "eslint-plugin-import": "^2.18.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
+    "pre-commit": "^1.2.2",
     "sinon": "^7.3.2",
     "standard-version": "^6.0.1"
   },
-  "dependencies": {
-    "basketball-reference-js": "^0.2.6",
-    "mongodb": "^3.2.7"
+  "engines": {
+    "node": ">=10.16.0"
   }
 }

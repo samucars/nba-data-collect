@@ -19,8 +19,9 @@ const games = [
   }
 ];
 
-const playByPlay = [
-  [
+const playByPlay = {
+  link: 'tchanana',
+  quarters: [
     {
       quarter: 1,
       plays: [
@@ -90,77 +91,7 @@ const playByPlay = [
       ]
     }
   ],
-  [
-    {
-      quarter: 1,
-      plays: [
-        {
-          time: '11:48.0',
-          team: 'Golden State',
-          play: 'Turnover by K. Thompson (bad pass; steal by S. Adams)',
-          scoring: 0
-        },
-        {
-          time: '11:43.0',
-          team: 'Oklahoma City',
-          play: 'Turnover by P. George (bad pass)',
-          scoring: 0
-        }
-      ]
-    },
-    {
-      quarter: 2,
-      plays: [
-        {
-          time: '11:40.0',
-          team: 'Oklahoma City',
-          play: 'Shooting foul by Q. Cook (drawn by R. Felton)',
-          scoring: 0
-        },
-        {
-          time: '11:40.0',
-          team: 'Oklahoma City',
-          play: 'R. Felton makes free throw 1 of 3',
-          scoring: 1
-        }
-      ]
-    },
-    {
-      quarter: 3,
-      plays: [
-        {
-          time: '11:50.0',
-          team: 'Oklahoma City',
-          play: 'P. George makes 2-pt jump shot from 4 ft',
-          scoring: 2
-        },
-        {
-          time: '11:27.0',
-          team: 'Oklahoma City',
-          play: 'Violation by Team (kicked ball)',
-          scoring: 0
-        }
-      ]
-    },
-    {
-      quarter: 4,
-      plays: [
-        {
-          time: '11:45.0',
-          team: 'Golden State',
-          play: 'Offensive foul by J. Jerebko (drawn by H. Diallo)',
-          scoring: 0
-        },
-        {
-          time: '11:45.0',
-          team: 'Golden State',
-          play: 'Turnover by J. Jerebko (offensive foul)',
-          scoring: 0
-        }
-      ]
-    }
-  ]
-];
+};
 
 module.exports = {
   games,
