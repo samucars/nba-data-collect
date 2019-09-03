@@ -48,7 +48,7 @@ describe('A job that collects data about the games', () => {
 
     await jobs.collectGameData.handler();
 
-    assert.equal(stubGetGames.firstCall.args[0].toString(), 'Mon Oct 15 2018 00:00:00 GMT-0300 (GMT-03:00)');
+    assert.equal(stubGetGames.firstCall.args[0].constructor.name, 'Date');
   });
   it('should get the "play-by-play" of each game', async () => {
     await jobs.collectGameData.handler();
@@ -68,7 +68,7 @@ describe('A job that collects data about the games', () => {
     await jobs.collectGameData.handler();
 
     assert.equal(Object.keys(stubFindOneAndUpdate.firstCall.args[0]).length, 0);
-    assert.equal(stubFindOneAndUpdate.firstCall.args[1].$set.lastDate.toString(), 'Mon Oct 15 2018 00:00:00 GMT-0300 (GMT-03:00)');
+    assert.equal(stubFindOneAndUpdate.firstCall.args[1].$set.lastDate.constructor.name, 'Date');
   });
   it('should return exception', async () => {
     stubFindOneAndUpdate.throws('error');
