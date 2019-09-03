@@ -8,3 +8,5 @@ scritpt:
   - "npm run test"
   - "npm run lint"
   - "npm run deploy"
+on:
+  branch: master
