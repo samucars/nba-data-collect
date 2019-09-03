@@ -59,7 +59,7 @@ describe('A job that collects data about the games', () => {
     await jobs.collectGameData.handler();
 
     const args = stubInsertOne.firstCall.args[0];
-    assert.equal(args.game.date.toString(), 'Mon Oct 15 2018 00:00:00 GMT-0300 (GMT-03:00)');
+    assert.equal(args.game.date.constructor.name, 'Date');
     assert.equal(args.game.link, 'tchanana');
     assert.equal(args.stats.constructor.name, 'Array');
     assert.equal(args.createdAt.constructor.name, 'Date');
